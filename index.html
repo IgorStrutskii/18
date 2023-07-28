@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Створюємо сутності</title>
+  </head>
+  <body>
+    <script>
+      let ladder = {
+        step: 0,
+        up: function () {
+          this.step++;
+          return this; // Повертаємо об'єкт ladder для можливості ланцюжкових викликів
+        },
+        down: function () {
+          this.step--;
+          return this; // Повертаємо об'єкт ladder для можливості ланцюжкових викликів
+        },
+        showStep: function () {
+          alert(this.step);
+          return this; // Повертаємо об'єкт ladder для можливості ланцюжкових викликів
+        },
+      };
+
+      // Використання ланцюжкових викликів
+      ladder.up().up().down().showStep(); // Виведе 1
+    </script>
+  </body>
+</html>
